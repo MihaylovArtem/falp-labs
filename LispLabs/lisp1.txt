@@ -1,0 +1,16 @@
+(defun print-line (n)
+    (loop repeat n do (format t "*"))
+    (format t "~%"))
+
+(defun print-side (n)
+    (format t "*")
+    (loop repeat (- n 2) do (format t " "))
+    (format t "*~%"))
+
+(defun print-square (n)
+    (print-line n)
+    (loop repeat (- n 2) do
+        (print-side n))
+    (if (not(= n 1)) (print-line n)))
+
+(print-square (read))

@@ -1,0 +1,7 @@
+(defun nested-sum (a)
+    (cond
+        ((null a) 0)
+        ((atom a) a)
+        (t (+ (nested-sum (car a)) (nested-sum (cdr a))))))
+
+(print (nested-sum '(1 (2 3 (4)) 5)))

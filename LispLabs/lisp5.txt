@@ -1,0 +1,12 @@
+(defun deltas (a b h)
+    (* h (/ (+ a b) 2.0)))
+
+(defun integral (f a b s)
+    (if (>= a b)
+        0
+        (+ (deltas (f a) (f (+ a s)) s) (integral f (+ a s) b s))))
+
+(defun f (x)
+    (* x x x))
+    
+(print (integral 'f 0 1 0.0001))
